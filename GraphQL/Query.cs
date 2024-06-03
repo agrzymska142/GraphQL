@@ -13,5 +13,29 @@ namespace GraphQL
         {
             _repository = repository;
         }
+
+
+        /*
+        query {
+          authors {
+            id
+            name
+            bio
+            }
+        }
+        */
+        public IEnumerable<Author> GetAuthors() => _repository.GetAllAuthors();
+
+
+
+        /*
+        query {
+          bookById(id: 1) {
+            id
+            title
+          }
+        }
+         */
+        public Book GetBookById(int id) => _repository.GetBookById(id);
     }
 }

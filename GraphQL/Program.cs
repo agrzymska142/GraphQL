@@ -15,7 +15,7 @@ builder.Services.AddSingleton<IRepository, Repository>();
 // Add GraphQL services
 builder.Services.AddGraphQLServer()
         .AddQueryType<Query>()
-        //.AddMutationType<Mutation>()
+        .AddMutationType<Mutation>()
         .AddApolloTracing();
 
 var app = builder.Build();
